@@ -1,5 +1,6 @@
 class Cards:
     """Base Class"""
+    # Burlap Sack full of onions
     def __init__(self, name = None, type = None, ability = None):
         self.name = name
         self.type = type
