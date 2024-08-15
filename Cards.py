@@ -1,6 +1,5 @@
 class Cards:
     """Base Class"""
-    # Women
     def __init__(self, name = None, type = None, ability = None):
         self.name = name
         self.type = type
