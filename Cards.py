@@ -1,6 +1,6 @@
 class Cards:
     """Base Class"""
-    # WOMEN SCARY
+    # WOMEN SCARy
     def __init__(self, name = None, type = None, ability = None):
         self.name = name
         self.type = type
