@@ -9,6 +9,8 @@ cards = pd.read_csv(file_path)
 
 deck = []
 
+"""This creats a list of cards that we use as the deck.
+Each card is created as an object before being added to the deck"""
 for _, row in cards.iterrows():
     card_type = row['Card Type']
 
@@ -58,8 +60,8 @@ for _, row in cards.iterrows():
         deck.append(card)
         count += 1
 
-for card in deck:
-    print(card)
+
+
 
 
 
