@@ -59,5 +59,3 @@ class Special(Cards):
         return f"Name: {self.name}\nType: {self.type}\nJunk: {self.junk}\nTrait: {self.trait}\n" \
                f"Ability: {self.ability}\nPurchase Cost: {self.purchase_cost}\n"
 
-person = People("Chris", "Human", "Intellegence", "Water", None, 3, 4)
-print(person)
