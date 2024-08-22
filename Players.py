@@ -28,9 +28,10 @@ def choose_names(players, player_list):
 
     return player_list
 
+
 """This class allows each player to choose their desired camps"""
 def choose_camps(player_list):
-
+    print(len(Deck.deck))
     #Itterate through each player
     player_count = 0
     while player_count < len(player_list):
@@ -73,9 +74,37 @@ def choose_camps(player_list):
 
         player_count += 1
 
+    #Remove all camp cards from deck
+    to_remove = [card for card in Deck.deck if isinstance(card, Cards.Camp)]
+    for card in to_remove:
+        Deck.deck.remove(card)
+
+
+def hand_setup(player_list):
+    for player in player_list:
+        hand = []
+        starter_hand = 0
+        for camp in player.camp_card:
+            starter_hand += camp.camp_draw
+
+        for i in range(starter_hand):
+            draw_card = random.choice(Deck.deck)
+            hand.append(draw_card)
+            Deck.deck.remove(draw_card)
+
+        player.hand = hand
+
+
+
+
+
+
 if __name__ == "__main__":
     player_list = []
     players = int(input('How many players: '))
     player_list = choose_names(players, player_list)
     choose_camps(player_list)
+    hand_setup(player_list)
+
+
 
