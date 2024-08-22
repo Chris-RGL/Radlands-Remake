@@ -2,7 +2,7 @@ import Cards
 import random
 import Deck
 
-
+player_list = []
 class Player:
     def __init__(self, name: str, camp_card= None, hand = None, active_cards = None,
                  water = 3):
@@ -18,7 +18,7 @@ class Player:
 
 
 """This class initiats the player objects with a name to start"""
-def choose_names(players, player_list):
+def choose_names(players):
     player_count = 0
     while player_count < players:
         name = input('Enter Name: ')
@@ -30,7 +30,7 @@ def choose_names(players, player_list):
 
 
 """This class allows each player to choose their desired camps"""
-def choose_camps(player_list):
+def choose_camps():
     print(len(Deck.deck))
     #Itterate through each player
     player_count = 0
@@ -80,7 +80,7 @@ def choose_camps(player_list):
         Deck.deck.remove(card)
 
 
-def hand_setup(player_list):
+def hand_setup():
     for player in player_list:
         hand = []
         starter_hand = 0
@@ -95,16 +95,11 @@ def hand_setup(player_list):
         player.hand = hand
 
 
-
-
-
-
-if __name__ == "__main__":
-    player_list = []
+def player_setup():
     players = int(input('How many players: '))
-    player_list = choose_names(players, player_list)
-    choose_camps(player_list)
-    hand_setup(player_list)
+    player_list = choose_names(players)
+    choose_camps()
+    hand_setup()
 
 
 

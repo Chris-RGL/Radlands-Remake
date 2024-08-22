@@ -8,12 +8,13 @@ class Cards:
 
 class Camp(Cards):
     def __init__(self, name: str, type: str, ability: str,
-                 trait: str, ability_cost: int, camp_draw: int):
+                 trait: str, ability_cost: int, camp_draw: int, health = 2):
         super().__init__(name = name, type = type, ability = ability)
 
         self.trait = trait
         self.ability_cost = ability_cost
         self.camp_draw = camp_draw
+        self.health = health
 
     def __str__(self) -> str:
         return f"Name: {self.name}\nType: {self.type}\nTrait: {self.trait}\n" \
@@ -34,13 +35,14 @@ class Event(Cards):
 
 class People(Cards):
     def __init__(self, name: str, type: str, ability: str, junk: str,
-                 trait: str, play_cost: int, ability_cost: int):
+                 trait: str, play_cost: int, ability_cost: int, health = 2):
         super().__init__(name = name, type = type, ability = ability)
 
         self.junk = junk
         self.trait = trait
         self.play_cost = play_cost
         self.ability_cost = ability_cost
+        self.health = health
 
     def __str__(self) -> str:
         return f"Name: {self.name}\nType: {self.type}\nJunk: {self.junk}\nTrait: {self.trait}\n" \
